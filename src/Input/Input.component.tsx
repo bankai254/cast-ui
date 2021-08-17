@@ -130,43 +130,42 @@ export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 const SInput = styled.input`
   flex-grow: 1;
   min-width: 0;
-  height: ${(props: Props) => props.theme.input[props.inputSize!].height}
+  height: ${(props: Props) => props.theme.input[props.inputSize!].height};
   box-sizing: border-box;
-	border: none;
+  border: none;
   border-radius: ${(props: Props) =>
     props.theme.common[props.inputSize!].borderRadius};
-	padding: ${(props: Props) => props.theme.input[props.inputSize!].padding}
+  padding: ${(props: Props) => props.theme.input[props.inputSize!].padding};
   font-family: ${(props: Props) => props.theme.typography.fontFamily};
-  font-size: ${(props: Props) => props.theme.input.fontSize}
+  font-size: ${(props: Props) => props.theme.input.fontSize};
   color: ${(props: Props) => props.theme.input.color};
   text-align: left;
   margin-right: 0;
   background-color: transparent !important;
-  
+
   &[data-invalid] {
     border-color: ${(props: Props) => props.theme.validation.borderColor};
   }
-  
+
   ::placeholder {
     color: ${props => props.theme.input.placeholderColor};
   }
-  
+
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-      // override autofill user-agent styles 
+    // override autofill user-agent styles
     -webkit-box-shadow: ${(props: Props) =>
       `inset 0 0 0 50px ${props.theme.colors.highlight200}`};
-    -webkit-text-fill-color: ${(props: Props) => props.theme.input.color};;
+    -webkit-text-fill-color: ${(props: Props) => props.theme.input.color};
   }
-  
+
   &:focus {
     outline: none !important;
     border: none;
     box-shadow: none;
   }
-  
 `;
 
 const SIconWrapper = styled.div`
@@ -190,10 +189,10 @@ const SInputWrapper = styled.div`
   box-sizing: border-box;
   display: inline-flex;
   flex-wrap: nowrap;
-	align-items: center;
-	background: ${(props: Props) => props.theme.input.background}
-	font-family: ${(props: Props) => props.theme.typography.fontFamily};
-  font-size: ${(props: Props) => props.theme.common[props.inputSize!].fontSize}
+  align-items: center;
+  background: ${(props: Props) => props.theme.input.background};
+  font-family: ${(props: Props) => props.theme.typography.fontFamily};
+  font-size: ${(props: Props) => props.theme.common[props.inputSize!].fontSize};
   color: ${(props: Props) => props.theme.reverseText};
   border: ${(props: Props) => props.theme.input.border};
   border-radius: ${(props: Props) =>
@@ -210,16 +209,17 @@ const SInputWrapper = styled.div`
     box-shadow: 0 0 3px ${(props: Props) => props.theme.colors.primary};
   }
 
-  &.disabled, &.disabled > input {
+  &.disabled,
+  &.disabled > input {
     border: ${props => props.theme.input.disabled.border};
     background: ${props => props.theme.input.disabled.background};
     cursor: not-allowed;
 
     & > div {
-      color: ${props => props.theme.input.disabled.addonTextColor};     
+      color: ${props => props.theme.input.disabled.addonTextColor};
     }
   }
-  
+
   &.highlighted {
     background-color: ${props => props.theme.colors.highlight200};
   }
